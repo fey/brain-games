@@ -8,4 +8,4 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-echo 'Welcome to the Brain Games!';
+echo 'Welcome to the Brain Games!'.PHP_EOL;
