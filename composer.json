@@ -1,0 +1,7 @@
+{
+    "name": "fey/brain-games",
+    "type": "project",
+    "bin": ["bin/brain-games"],
+    "description": "",
+    "require": {}
+}
