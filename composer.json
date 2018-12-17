@@ -2,6 +2,9 @@
     "name": "fey/brain-games",
     "type": "project",
     "bin": ["bin/brain-games"],
+    "autoload": {
+        "files": ["src/Cli.php"]
+    },
     "description": "",
     "require": {
         "wp-cli/php-cli-tools": "^0.11.10"
