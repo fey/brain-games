@@ -10,5 +10,7 @@
 # INSTALLEMENT
 
 `composer global require fey/brain-games`
+
 `echo export PATH="$PATH:$HOME/.config/composer/vendor/bin" >> ~/.bashrc`
+
 `brain-games`
