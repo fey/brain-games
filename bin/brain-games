@@ -8,4 +8,8 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-echo 'Welcome to the Brain Games!'.PHP_EOL;
+use function cli\line;
+
+line('Welcome to the Brain Game!');
+$name = \cli\prompt('May I have your name?');
+line('Hello, %s!', $name);
