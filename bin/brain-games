@@ -9,7 +9,5 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-if (isset($game)) {
-    $game = null;
-}
-BrainGames\Cli\run($game);
+
+BrainGames\Cli\run();

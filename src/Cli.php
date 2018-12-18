@@ -14,14 +14,14 @@ function askName()
     $name = prompt('May I have your name?');
     return $name;
 }
-function printHello($name)
+function printHello(string $name)
 {
-    line(PHP_EOL . 'Hello, %s! '. PHP_EOL, $name) ;
+    line(PHP_EOL . 'Hello, %s! '. PHP_EOL, $name);
 }
 
-function run($game)
+function run()
 {
     welcome();
     $name = askName();
-    printHello();
+    printHello($name);
 }
