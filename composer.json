@@ -3,13 +3,21 @@
     "type": "project",
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"],
+        "bin/brain-even"
+    ],
     "description": "Brain Games is bundle of mini-games with command-line interface",
-    "keywords": ["hexlet", "brain-games", "awesome", "cli", "project"],
+    "keywords": [
+        "hexlet", 
+        "brain-games", 
+        "awesome", 
+        "cli", 
+        "project"
+    ],
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/isEvenGame.php"]
+            "src/isEvenGame.php"
+        ]
     },
     "scripts": {
         "phpcs": "phpcs"
