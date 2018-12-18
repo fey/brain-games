@@ -8,6 +8,8 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-$game = "BrainGames\Games\isEvenGame";
-require_once 'brain-games';
+if (isset($game)) {
+    $game = null;
+}
+BrainGames\brainEven\game();
 
