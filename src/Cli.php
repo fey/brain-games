@@ -5,7 +5,7 @@ namespace BrainGames\Cli;
 use function cli\line;
 use function cli\prompt;
 
-function welcome()
+function printWelcome()
 {
     line('Welcome to the Brain Game!');
 }
@@ -18,10 +18,9 @@ function printHello(string $name)
 {
     line(PHP_EOL . 'Hello, %s! '. PHP_EOL, $name);
 }
-
 function run()
 {
-    welcome();
+    printWelcome();
     $name = askName();
     printHello($name);
 }
