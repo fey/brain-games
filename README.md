@@ -3,9 +3,9 @@
 [![Build Status](https://travis-ci.org/fey/project-lvl1-s396.svg?branch=master)](https://travis-ci.org/fey/project-lvl1-s396)
 
 
-# ASCIINEMA
-
-[![asciicast](https://asciinema.org/a/i1djvnjh0skpDeRYUCsJk4tIA.svg)](https://asciinema.org/a/i1djvnjh0skpDeRYUCsJk4tIA)
+## ASCIINEMA
+### Brain Games
+https://asciinema.org/a/i1djvnjh0skpDeRYUCsJk4tIA
 
 
 # REQUIREMENTS
