@@ -5,7 +5,9 @@
     "description": "Brain Games is bundle of mini-games with command-line interface",
     "keywords": ["hexlet", "brain-games", "awesome", "cli", "project"],
     "autoload": {
-        "files": ["src/Cli.php"]
+        "files": [
+            "src/Cli.php",
+            "src/isEvenGame.php"]
     },
     "scripts": {
         "phpcs": "phpcs"
