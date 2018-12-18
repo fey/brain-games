@@ -11,24 +11,20 @@ use function BrainGames\Cli\printHello;
 use function BrainGames\Cli\welcome;
 use function BrainGames\Cli\askName;
 
-function isEven($num)
-{
-    return $num % 2 === 0;
-};
-
 function getPlayerAnswer()
 {
     return prompt('Your answer');
 }
-function isValidAnswer($answer)
+function isValidAnswer(string $answer): bool
 {
     return \in_array($answer, ['no', 'yes']);
 }
-function getGameAnswer($number)
+function getGameAnswer(int $number): string
 {
-    return isEven($number) ? "yes" : "no";
+    $isEven = $number % 2 === 0;
+    return $isEven ? "yes" : "no";
 }
-function isCorrectAnswer($gameAnswer, $playerAnswer)
+function isCorrectAnswer(string $gameAnswer, string $playerAnswer): bool
 {
     return $gameAnswer === $playerAnswer;
 }
@@ -64,4 +60,4 @@ function game()
         line("'%s' is wrong answer ;(. Correct answer was '%s'." . PHP_EOL, $playerAnswer, $gameAnswer);
         line("Let's try again, %s!", $name);
     }
-};
+}
