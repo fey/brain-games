@@ -3,7 +3,8 @@
     "type": "project",
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "description": "Brain Games is bundle of mini-games with command-line interface",
     "keywords": [
@@ -16,7 +17,11 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/isEvenGame.php"
+            "games/isEvenGame.php",
+            "games/calcGame.php",
+            "src/brainEngine.php",
+            "src/isEvenFunctions.php",
+            "src/calcGameFunctions.php"
         ]
     },
     "scripts": {
