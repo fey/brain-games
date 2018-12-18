@@ -5,7 +5,7 @@
         "bin/brain-games",
         "bin/brain-even",
         "bin/brain-calc",
-        "bin/brain-nod"
+        "bin/brain-gcd"
     ],
     "description": "Brain Games is bundle of mini-games with command-line interface",
     "keywords": [
