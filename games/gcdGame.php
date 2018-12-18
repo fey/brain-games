@@ -3,10 +3,10 @@
 namespace Games;
 
 use function BrainGames\Engine\play;
-use function BrainGames\nodGame\functions\getQuestion;
-use function BrainGames\nodGame\functions\generateGameData;
+use function BrainGames\gcdGame\functions\getQuestion;
+use function BrainGames\gcdGame\functions\generateGameData;
 
-function nodGame()
+function gcdGame()
 {
     play(function ($gamePart) {
         switch ($gamePart) {
@@ -14,11 +14,11 @@ function nodGame()
                 return 'Find the greatest common divisor of given numbers.';
 
             case 'question':
-                return 'BrainGames\nodGame\functions\getQuestion';
+                return 'BrainGames\gcdGame\functions\getQuestion';
             case "gameData":
                 return generateGameData();
             case 'answer':
-                return 'BrainGames\nodGame\functions\getGameAnswer';
+                return 'BrainGames\gcdGame\functions\getGameAnswer';
         };
     });
 }

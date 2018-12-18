@@ -20,11 +20,11 @@
             "src/Cli.php",
             "games/isEvenGame.php",
             "games/calcGame.php",
-            "games/nodGame.php",
+            "games/gcdGame.php",
             "src/brainEngine.php",
             "src/isEvenFunctions.php",
             "src/calcGameFunctions.php",
-            "src/nodGAmeFunctions.php"
+            "src/gcdGAmeFunctions.php"
         ]
     },
     "scripts": {

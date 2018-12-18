@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\nodGame\functions;
+namespace BrainGames\gcdGame\functions;
 
 function modulo($max, $min)
 {
@@ -12,8 +12,8 @@ function modulo($max, $min)
 
 function generateGameData()
 {
-    $num1 = rand(4, 20);
-    $num2 = rand(4, 20);
+    $num1 = rand(2, 50);
+    $num2 = rand(2, 50);
     return [$num1, $num2];
 }
 
