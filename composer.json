@@ -4,7 +4,8 @@
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-nod"
     ],
     "description": "Brain Games is bundle of mini-games with command-line interface",
     "keywords": [
@@ -19,9 +20,11 @@
             "src/Cli.php",
             "games/isEvenGame.php",
             "games/calcGame.php",
+            "games/nodGame.php",
             "src/brainEngine.php",
             "src/isEvenFunctions.php",
-            "src/calcGameFunctions.php"
+            "src/calcGameFunctions.php",
+            "src/nodGAmeFunctions.php"
         ]
     },
     "scripts": {
