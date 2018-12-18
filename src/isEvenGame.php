@@ -5,54 +5,44 @@ namespace BrainGames\isEvenGame;
 use function \rand;
 use function \cli\line;
 use function \cli\prompt;
-use function BrainGames\Cli\greetings;
+
 use function BrainGames\Cli\getName;
 use function BrainGames\Cli\printHello;
-use function BrainGames\Cli\welcome;
+use function BrainGames\Cli\printWelcome;
 use function BrainGames\Cli\askName;
 
-function getPlayerAnswer()
+const IS_EVEN_GAME_RULES = 'Answer "yes" if number even otherwise answer "no".';
+
+function isEven(int $number): bool
 {
-    return prompt('Your answer');
-}
-function isValidAnswer(string $answer): bool
-{
-    return \in_array($answer, ['no', 'yes']);
+    return $number % 2 === 0;
 }
 function getGameAnswer(int $number): string
 {
-    $isEven = $number % 2 === 0;
-    return $isEven ? "yes" : "no";
-}
-function isCorrectAnswer(string $gameAnswer, string $playerAnswer): bool
-{
-    return $gameAnswer === $playerAnswer;
-}
-function printRules()
-{
-    line('Answer "yes" if number even otherwise answer "no".' . PHP_EOL);
+    return isEven($number) ? "yes" : "no";
 }
 function game()
 {
-    welcome();
-    printRules();
+    printWelcome();
+    line(IS_EVEN_GAME_RULES . PHP_EOL);
     $name = askName();
     printHello($name);
     $isCorrect = true;
     $questionNumber = 1;
+    $gameRounds = 10;
 
-    while ($isCorrect && $questionNumber <= 3) {
-        $number = \rand(1, 100);
-        line('Question: %s', $number);
-        $gameAnswer = getGameAnswer($number);
-        $playerAnswer = getPlayerAnswer($number);
-
-        if (isValidAnswer($playerAnswer) && isCorrectAnswer($gameAnswer, $playerAnswer)) {
+    for ($i = 1; $i <= $gameRounds; $i += 1) {
+        $question = \rand(1, 100);
+        line('Question: %s', $question);
+        $gameAnswer = getGameAnswer($question);
+        $playerAnswer = prompt('Your answer');
+    
+        if ($gameAnswer === $playerAnswer) {
             line('Correct!');
         } else {
             $isCorrect = false;
+            break;
         }
-        $questionNumber += 1;
     }
     if ($isCorrect) {
         line("Congratulations, {$name}!");
