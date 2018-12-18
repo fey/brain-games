@@ -24,7 +24,7 @@
             "src/brainEngine.php",
             "src/isEvenFunctions.php",
             "src/calcGameFunctions.php",
-            "src/gcdGAmeFunctions.php"
+            "src/gcdGameFunctions.php"
         ]
     },
     "scripts": {
