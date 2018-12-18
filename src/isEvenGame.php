@@ -1,10 +1,15 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\brainEven;
 
 use function \rand;
 use function \cli\line;
 use function \cli\prompt;
+use function BrainGames\Cli\greetings;
+use function BrainGames\Cli\getName;
+use function BrainGames\Cli\printHello;
+use function BrainGames\Cli\welcome;
+use function BrainGames\Cli\askName;
 
 function isEven($num)
 {
@@ -27,9 +32,16 @@ function isCorrectAnswer($gameAnswer, $playerAnswer)
 {
     return $gameAnswer === $playerAnswer;
 }
-function isEvenGame($name)
+function printRules()
 {
     line('Answer "yes" if number even otherwise answer "no".' . PHP_EOL);
+}
+function game()
+{
+    welcome();
+    printRules();
+    $name = askName();
+    printHello($name);
     $isCorrect = true;
     $questionNumber = 1;
 
