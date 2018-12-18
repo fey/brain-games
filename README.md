@@ -15,6 +15,10 @@ https://asciinema.org/a/chiHb4B5iTdZP5sHy4fFwQgmd
 
 https://asciinema.org/a/6i9KL0POXVEEIp2P2ptfUsxSq
 
+# Brain GCD
+
+https://asciinema.org/a/yrL3vTGcHRZmEpyL1tdNxJDOi
+
 # REQUIREMENTS
 * php 7.2+
 * composer
