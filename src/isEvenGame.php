@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\brainEven;
+namespace BrainGames\isEvenGame;
 
 use function \rand;
 use function \cli\line;

@@ -9,5 +9,5 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-BrainGames\brainEven\game();
+BrainGames\isEvenGame\game();
 
