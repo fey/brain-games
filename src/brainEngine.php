@@ -9,6 +9,7 @@ use function \BrainGames\Cli\printBye;
 use function \BrainGames\Cli\printHello;
 use function \BrainGames\Cli\printWelcome;
 
+const ROUNDS = 3;
 function play($game)
 {
     printWelcome();
@@ -16,9 +17,8 @@ function play($game)
     $name = askName();
     printHello($name);
 
-    $rounds = 3;
     $isCorrect = true;
-    for ($i = 1; $i <= $rounds; $i += 1) {
+    for ($i = 1; $i <= ROUNDS; $i += 1) {
         $gameData = $game('gameData');
         $question = $game('question')($gameData);
 

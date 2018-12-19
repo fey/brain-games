@@ -1,6 +1,25 @@
 <?php
 
-namespace BrainGames\calcGame\functions;
+namespace Games\Calc;
+
+use function BrainGames\Engine\play;
+
+function game()
+{
+    play(function ($gamePart) {
+        switch ($gamePart) {
+            case 'description':
+                return 'What is the result of the expression?';
+
+            case 'question':
+                return 'Games\Calc\getQuestion';
+            case "gameData":
+                return generateQuestionData();
+            case 'answer':
+                return 'Games\Calc\getGameAnswer';
+        };
+    });
+}
 
 function getOperand()
 {

@@ -1,6 +1,24 @@
 <?php
 
-namespace BrainGames\gcdGame\functions;
+namespace Games\Gcd;
+
+use function BrainGames\Engine\play;
+
+function game()
+{
+    play(function ($gamePart) {
+        switch ($gamePart) {
+            case 'description':
+                return 'Find the greatest common divisor of given numbers.';
+            case 'question':
+                return 'Games\Gcd\getQuestion';
+            case "gameData":
+                return generateGameData();
+            case 'answer':
+                return 'Games\Gcd\getGameAnswer';
+        };
+    });
+}
 
 function modulo($max, $min)
 {
