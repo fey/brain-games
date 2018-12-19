@@ -26,9 +26,9 @@ function getOperand()
 function generateGameData()
 {
     return [
-        'firstNumber' => rand(1, 10),
+        'firstNumber' => rand(1, 50),
         'operand' =>getOperand(),
-        'secondNumber' => rand(1, 10),
+        'secondNumber' => rand(1, 50),
     ];
 }
 

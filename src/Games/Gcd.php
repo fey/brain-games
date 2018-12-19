@@ -28,8 +28,8 @@ function modulo($max, $min)
 
 function generateGameData()
 {
-    $num1 = rand(2, 50);
-    $num2 = rand(2, 50);
+    $num1 = rand(2, 100);
+    $num2 = rand(2, 100);
     return [$num1, $num2];
 }
 
