@@ -5,8 +5,7 @@
         "bin/brain-games",
         "bin/brain-even",
         "bin/brain-calc",
-        "bin/brain-gcd",
-        "bin/brain-progression"
+        "bin/brain-gcd"
     ],
     "description": "Brain Games is bundle of mini-games with command-line interface",
     "keywords": [
@@ -22,9 +21,7 @@
             "src/games/IsEven.php",
             "src/games/Calc.php",
             "src/games/Gcd.php",
-            "src/games/Progression.php",
             "src/Engine.php"
-            
         ]
     },
     "scripts": {
