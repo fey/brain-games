@@ -6,7 +6,7 @@
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
-        "bin/brain-progresssion",
+        "bin/brain-progression",
         "bin/brain-prime"
     ],
     "description": "Brain Games is bundle of mini-games with command-line interface",
