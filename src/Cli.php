@@ -19,7 +19,7 @@ function askName()
 
 function printHello(string $name)
 {
-    line(PHP_EOL . 'Hello, %s! '. PHP_EOL, $name);
+    line(PHP_EOL . 'Hello, %s! ' . PHP_EOL, $name);
 }
 
 function printBye($playerName, $playerAnswer, $gameAnswer, $isCorrect)
