@@ -4,19 +4,17 @@ namespace Games\Gcd;
 
 use function BrainGames\Engine\play;
 
+const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
+
 function game()
 {
-    play(function ($gamePart) {
-        switch ($gamePart) {
-            case 'description':
-                return 'Find the greatest common divisor of given numbers.';
-            case 'question':
-                return 'Games\Gcd\getQuestion';
-            case "gameData":
-                return generateGameData();
-            case 'answer':
-                return 'Games\Gcd\getGameAnswer';
-        };
+    play(DESCRIPTION, function () {
+        $gameData = generateGameData();
+        $question = getQuestion($gameData);
+        return [
+            'question' => $question,
+            'answer' => getGameAnswer($gameData),
+        ];
     });
 }
 

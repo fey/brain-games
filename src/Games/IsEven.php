@@ -4,20 +4,16 @@ namespace Games\IsEven;
 
 use function BrainGames\Engine\play;
 
+const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
+
 function game()
 {
-    play(function ($gamePart) {
-        switch ($gamePart) {
-            case 'description':
-                return 'Answer "yes" if number even otherwise answer "no".';
-
-            case 'question':
-                return 'Games\IsEven\getQuestion';
-            case "gameData":
-                return rand(1, 10);
-            case 'answer':
-                return 'Games\IsEven\getGameAnswer';
-        };
+    play(DESCRIPTION, function () {
+        $question = getQuestion();
+        return [
+            'question' => $question,
+            'answer' => getGameAnswer($question),
+        ];
     });
 }
 
@@ -32,8 +28,7 @@ function getGameAnswer(int $number): string
     return isEven($number) ? "yes" : "no";
 }
 
-function getQuestion($number)
+function getQuestion()
 {
-    // return rand(1, 10);
-    return $number;
+    return rand(1, 10);
 }
