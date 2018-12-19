@@ -2,49 +2,51 @@
 
 namespace Games\Progression;
 
-use function BrainGames\Engine\play;
+use function BrainGames\Cli\play;
 
 const DESCRIPTION = 'What number is missing in the progression?';
-
+const PROGRESSION_SIZE = 10;
 
 function game()
 {
-    play(DESCRIPTION, function () {
-        $step = rand(1, 5);
-        $maxSize = 10;
-        $progression = generateProgression($maxSize, $step);
-        $hidden = array_rand($progression);
-        $answer = getGameAnswer($progression, $hidden);
-        $question = generateQuestion($progression, $hidden);
+    $game = function () {
+        $progression = generateProgression();
+        $indexOfHidden = array_rand($progression);
+        $answer = getGameAnswer($progression, $indexOfHidden);
+        $question = generateQuestion($progression, $indexOfHidden);
+
         return [
             'question' => $question,
-            'answer' => $answer,
+            'answer'   => $answer,
         ];
-    });
+    };
+    play(DESCRIPTION, $game);
 }
 
-function generateProgression($maxSize, $step)
+function generateProgression()
 {
-    $progression = [];
-    for ($i = 0; $i < $maxSize; $i += 1) {
-        $progression[] = $i * $step;
-    }
-    return $progression;
+    $firstElement = rand(1, 100);
+    $step = rand(1, 5);
+    $iter = function ($acc) use ($step, &$iter) {
+        $currentSize = count($acc);
+        if ($currentSize < PROGRESSION_SIZE) {
+            $acc[] = $acc[$currentSize - 1] + $step;
+            return $iter($acc);
+        }
+
+        return $acc;
+    };
+
+    return $iter([$firstElement]);
 }
 
-function getGameAnswer($progression, $index): string
+function getGameAnswer($progression, $indexOfHidden): string
 {
-    return $progression[$index];
+    return $progression[$indexOfHidden];
 }
 
-function hideAnswer($progression, $index)
+function generateQuestion($progression, $hiddenIndex):string
 {
-    $progression[$index] = '..';
-
-    return $progression;
-}
-
-function generateQuestion($progression, $index)
-{
-    return implode(" ", hideAnswer($progression, $index));
+    $progression[$hiddenIndex] = '..';
+    return implode(" ", $progression);
 }

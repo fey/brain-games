@@ -2,32 +2,34 @@
 
 namespace Games\Calc;
 
-use function BrainGames\Engine\play;
+use function BrainGames\Cli\play;
 
 const DESCRIPTION = 'What is the result of the expression?';
 function game()
 {
-    play(DESCRIPTION, function () {
+    $game = function () {
         $gameData = generateGameData();
         $question = getQuestion($gameData);
+        $answer   = getGameAnswer($gameData);
         return [
             'question' => $question,
-            'answer' => getGameAnswer($gameData),
+            'answer'   => $answer,
         ];
-    });
+    };
+    play(DESCRIPTION, $game);
 }
 
 function getOperand()
 {
-    $operands = str_split("+-*");
+    $operands = ["+", "-", "*"];
     return $operands[array_rand($operands)];
 }
 
 function generateGameData()
 {
     return [
-        'firstNumber' => rand(1, 50),
-        'operand' => getOperand(),
+        'firstNumber'  => rand(1, 50),
+        'operand'      => getOperand(),
         'secondNumber' => rand(1, 50),
     ];
 }

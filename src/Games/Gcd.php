@@ -2,48 +2,35 @@
 
 namespace Games\Gcd;
 
-use function BrainGames\Engine\play;
+use function BrainGames\Cli\play;
 
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function game()
 {
-    play(DESCRIPTION, function () {
-        $gameData = generateGameData();
-        $question = getQuestion($gameData);
+    $game = function () {
+        $num1 = rand(1, 100);
+        $num2 = rand(1, 100);
+        $question = getQuestion($num1, $num2);
+        $answer = gcd($num1, $num2);
         return [
             'question' => $question,
-            'answer' => getGameAnswer($gameData),
+            'answer'   => $answer,
         ];
-    });
+    };
+    play(DESCRIPTION, $game);
 }
 
-function modulo($max, $min)
+function gcd($num1, $num2):string
 {
-    if ($min === 0) {
-        return 0;
-    }
-    return $max % $min;
+    $min = min([$num1, $num2]);
+    $max = max([$num1, $num2]);
+    $modulo = ($min === 0) ? 0 : ($max % $min);
+
+    return ($modulo === 0) ? $min : gcd($min, $modulo);
 }
 
-function generateGameData()
+function getQuestion($num1, $num2)
 {
-    $num1 = rand(2, 100);
-    $num2 = rand(2, 100);
-    return [$num1, $num2];
-}
-
-function getGameAnswer($gameData):string
-{
-    $min = min($gameData);
-    $max = max($gameData);
-    $modulo = modulo($max, $min);
-    if ($modulo === 0) {
-        return $min;
-    }
-    return getGameAnswer([$min, $modulo]);
-}
-function getQuestion($questionData):string
-{
-    return implode(" ", $questionData);
+    return "{$num1} {$num2}";
 }
