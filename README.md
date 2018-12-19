@@ -7,23 +7,31 @@
 ### Brain Games
 https://asciinema.org/a/i1djvnjh0skpDeRYUCsJk4tIA
 
-# Brain Even
+### Brain Even
 
 https://asciinema.org/a/chiHb4B5iTdZP5sHy4fFwQgmd
 
-# Brain Calc
+### Brain Calc
 
 https://asciinema.org/a/6i9KL0POXVEEIp2P2ptfUsxSq
 
-# Brain GCD
+### Brain GCD
 
 https://asciinema.org/a/yrL3vTGcHRZmEpyL1tdNxJDOi
 
-# REQUIREMENTS
+### Brain Progression
+
+https://asciinema.org/a/lShaSaX3fv3YLqQbDRBj48X8Z
+
+### Brain Prime
+
+https://asciinema.org/a/PADQIPAL5KPYYdZJTPOFvi3Fo
+
+## REQUIREMENTS
 * php 7.2+
 * composer
 
-# INSTALLEMENT
+## INSTALLEMENT
 
 `composer global require fey/brain-games`
 
