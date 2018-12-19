@@ -23,7 +23,7 @@
             "src/games/Calc.php",
             "src/games/Gcd.php",
             "src/games/Progression.php",
-            "src/BrainEngine.php"
+            "src/Engine.php"
             
         ]
     },
