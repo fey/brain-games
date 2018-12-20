@@ -13,7 +13,7 @@ function game()
         $answer   = getGameAnswer($question);
         return [
             'question' => $question,
-            'answer'   => getGameAnswer($question),
+            'answer'   => $answer,
         ];
     };
     play(DESCRIPTION, $game);
