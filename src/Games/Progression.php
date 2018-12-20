@@ -15,7 +15,7 @@ function game()
         $progression = generateProgression($firstElement, $step, PROGRESSION_SIZE);
         $indexOfHidden = array_rand($progression);
 
-        $answer ="{$progression[$indexOfHidden]}";
+        $answer = "{$progression[$indexOfHidden]}";
         $question = function () use ($progression, $indexOfHidden) {
             $progression[$indexOfHidden] = '..';
             return implode(" ", $progression);
@@ -33,7 +33,7 @@ function generateProgression($firstElement, $step, $size)
 {
     $progression = [];
 
-    for($i = 0; $i < $size; $i += 1) {
+    for ($i = 0; $i < $size; $i += 1) {
         $progression[] = $firstElement + $step * $i;
     }
 
