@@ -21,6 +21,9 @@ function game()
 
 function isPrime(int $number): bool
 {
+    if ($number < 2) {
+        return false;
+    }
     $iter = function ($delim) use ($number, &$iter) {
         if ($delim ** 2 <= $number) {
             if ($number % $delim === 0) {
