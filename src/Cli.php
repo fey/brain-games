@@ -8,10 +8,10 @@ use function cli\prompt;
 const ROUNDS = 3;
 function play($description, $game)
 {
-    printWelcome();
+    line('Welcome to the Brain Game!');
     line($description . PHP_EOL);
-    $name = askName();
-    printHello($name);
+    $name = prompt('May I have your name?');
+    line(PHP_EOL . 'Hello, %s! ' . PHP_EOL, $name);
     $isCorrect = true;
 
     for ($i = 1; $i <= ROUNDS; $i += 1) {
@@ -26,28 +26,6 @@ function play($description, $game)
             break;
         }
     }
-
-    printBye($name, $playerAnswer, $gameAnswer, $isCorrect);
-}
-function printWelcome()
-{
-    line('Welcome to the Brain Game!');
-}
-
-function askName()
-{
-    $name = prompt('May I have your name?');
-    return $name;
-}
-
-
-function printHello(string $name)
-{
-    line(PHP_EOL . 'Hello, %s! ' . PHP_EOL, $name);
-}
-
-function printBye($playerName, $playerAnswer, $gameAnswer, $isCorrect)
-{
     if ($isCorrect) {
         line("Congratulations, {$playerName}!");
     } else {
