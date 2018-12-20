@@ -5,12 +5,16 @@ namespace Games\Calc;
 use function BrainGames\Cli\play;
 
 const DESCRIPTION = 'What is the result of the expression?';
+const OPERANDS = ["+", "-", "*"];
 function game()
 {
     $game = function () {
-        $gameData = generateGameData();
-        $question = getQuestion($gameData);
-        $answer   = getGameAnswer($gameData);
+        $firstNumber  = rand(1, 50);
+        $operand      = OPERANDS[array_rand(OPERANDS)];
+        $secondNumber = rand(1, 50);
+
+        $question = "{$firstNumber} {$operand} {$secondNumber}";
+        $answer   = getGameAnswer($firstNumber, $secondNumber, $operand);
         return [
             'question' => $question,
             'answer'   => $answer,
@@ -19,24 +23,8 @@ function game()
     play(DESCRIPTION, $game);
 }
 
-function getOperand()
+function getGameAnswer($firstNum, $secondNum, $operand):string
 {
-    $operands = ["+", "-", "*"];
-    return $operands[array_rand($operands)];
-}
-
-function generateGameData()
-{
-    return [
-        'firstNumber'  => rand(1, 50),
-        'operand'      => getOperand(),
-        'secondNumber' => rand(1, 50),
-    ];
-}
-
-function getGameAnswer($questionData):string
-{
-    ['firstNumber' => $firstNum, 'operand' => $operand, 'secondNumber' => $secondNum] = $questionData;
     switch ($operand) {
         case "+":
             return $firstNum + $secondNum;
@@ -45,9 +33,4 @@ function getGameAnswer($questionData):string
         case "-":
             return $firstNum - $secondNum;
     }
-}
-
-function getQuestion($questionData):string
-{
-    return implode(" ", $questionData);
 }
