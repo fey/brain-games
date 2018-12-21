@@ -7,7 +7,8 @@
         "bin/brain-calc",
         "bin/brain-gcd",
         "bin/brain-progression",
-        "bin/brain-prime"
+        "bin/brain-prime",
+        "bin/brain-power"
     ],
     "description": "Brain Games is bundle of mini-games with command-line interface",
     "keywords": [
@@ -24,7 +25,8 @@
             "src/Games/Calc.php",
             "src/Games/Gcd.php",
             "src/Games/Progression.php",
-            "src/Games/IsPrime.php"
+            "src/Games/IsPrime.php",
+            "src/Games/TwoInPower.php"
         ]
     },
     "scripts": {
