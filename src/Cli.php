@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 
 const ROUNDS = 3;
-line('Welcome to the Brain Games!');
+
 function run($game = null)
 {
     if ($game) {
@@ -31,13 +31,12 @@ function run($game = null)
 
         return;
     } else {
-
+        line('Welcome to the Brain Games!');
         $games = require_once(__DIR__ . '/menu.php');
         $game = \cli\menu($games, $default = false, $title = 'Choose a game number');
         if (function_exists($game)) {
-
-        return $game();
+            return $game();
         }
-    line("Wrong game number!");
+        line("Wrong game number!");
     }
 }
