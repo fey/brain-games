@@ -14,6 +14,7 @@ function game()
         return [
             'question' => $question,
             'answer'   => $answer,
+            'description' => DESCRIPTION
         ];
     };
     run(DESCRIPTION, $game);
@@ -24,16 +25,12 @@ function isPrime(int $number): bool
     if ($number < 2) {
         return false;
     }
-    $iter = function ($delim) use ($number, &$iter) {
-        if ($delim ** 2 <= $number) {
-            if ($number % $delim === 0) {
-                return false;
-            }
-            return $iter($delim + 1);
+    for ($delim = 2; $delim ** 2 <= $number; $delim += 1) {
+        if ($number % $delim === 0) {
+            return false;
         }
-        return true;
-    };
-    return $iter(2);
+    }
+    return true;
 }
 
 function getGameAnswer(int $number): string

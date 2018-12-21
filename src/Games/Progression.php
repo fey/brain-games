@@ -24,12 +24,13 @@ function game()
         return [
             'question' => $question(),
             'answer'   => $answer,
+            'description' => DESCRIPTION
         ];
     };
     run(DESCRIPTION, $game);
 }
 
-function generateProgression($firstElement, $step, $size)
+function generateProgression(int $firstElement, int $step, int $size): array
 {
     $progression = [];
 
