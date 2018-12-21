@@ -6,40 +6,53 @@ use function cli\line;
 use function cli\prompt;
 
 const ROUNDS = 3;
-function play($description, $game)
+
+function play()
 {
     line('Welcome to the Brain Game!');
     line($description . PHP_EOL);
     $playerName = prompt('May I have your name?');
     line(PHP_EOL . 'Hello, %s! ' . PHP_EOL, $playerName);
-    $isCorrect = true;
+    if ($game) {
+        for ($i = 1; $i <= ROUNDS; $i += 1) {
+            ['question' => $question, 'answer' => $gameAnswer] = $game();
+            line('Question: %s', $question);
+            $playerAnswer = prompt('Your answer');
 
-    for ($i = 1; $i <= ROUNDS; $i += 1) {
-        ['question' => $question, 'answer' => $gameAnswer] = $game();
-        line('Question: %s', $question);
-        $playerAnswer = prompt('Your answer');
-
-        if ($gameAnswer === $playerAnswer) {
-            line('Correct!');
-        } else {
-            $isCorrect = false;
-            break;
+            if ($gameAnswer === $playerAnswer) {
+                line('Correct!');
+            } else {
+                line("'%s' is wrong answer ;(. Correct answer was '%s'." . PHP_EOL, $playerAnswer, $gameAnswer);
+                line("Let's try again, %s!", $playerName);
+                return;
+            }
         }
     }
-    if ($isCorrect) {
-        line("Congratulations, {$playerName}!");
-    } else {
-        line("'%s' is wrong answer ;(. Correct answer was '%s'." . PHP_EOL, $playerAnswer, $gameAnswer);
-        line("Let's try again, %s!", $playerName);
-    }
+    line("Congratulations, {$playerName}!");
+    return;
 }
-function run($game = null)
+function run($description = "", $game = null)
 {
-    if (is_null($game)) {
-        printWelcome();
-        $name = askName();
-        printHello($name);
-    } else {
-        $game();
+    line('Welcome to the Brain Game!');
+    line($description . PHP_EOL);
+    $playerName = prompt('May I have your name?');
+    line(PHP_EOL . 'Hello, %s! ' . PHP_EOL, $playerName);
+
+    if ($game) {
+        for ($i = 1; $i <= ROUNDS; $i += 1) {
+            ['question' => $question, 'answer' => $gameAnswer] = $game();
+            line('Question: %s', $question);
+            $playerAnswer = prompt('Your answer');
+
+            if ($gameAnswer === $playerAnswer) {
+                line('Correct!');
+            } else {
+                line("'%s' is wrong answer ;(. Correct answer was '%s'." . PHP_EOL, $playerAnswer, $gameAnswer);
+                line("Let's try again, %s!", $playerName);
+                return;
+            }
+        }
+        line("Congratulations, {$playerName}!");
+        return;
     }
 }
