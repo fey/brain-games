@@ -27,10 +27,10 @@ function game()
             'description' => DESCRIPTION
         ];
     };
-    run($game);
+    run(DESCRIPTION, $game);
 }
 
-function generateProgression($firstElement, $step, $size)
+function generateProgression(int $firstElement, int $step, int $size): array
 {
     $progression = [];
 

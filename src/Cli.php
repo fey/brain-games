@@ -4,16 +4,16 @@ namespace BrainGames\Cli;
 
 use function cli\line;
 use function cli\prompt;
-
+use function cli\menu as cliMenu;
 const ROUNDS = 3;
-
-function run($game = null)
+function run($description = null, $game = null)
 {
+
     if ($game) {
         $playerName = prompt('May I have your name?');
         line(PHP_EOL . 'Hello, %s! ' . PHP_EOL, $playerName);
-        ['description' => $description] = $game();
         line($description . PHP_EOL);
+
         for ($i = 1; $i <= ROUNDS; $i += 1) {
             ['question' => $question, 'answer' => $gameAnswer] = $game();
             line('Question: %s', $question);
@@ -24,19 +24,25 @@ function run($game = null)
             } else {
                 line("'%s' is wrong answer ;(. Correct answer was '%s'." . PHP_EOL, $playerAnswer, $gameAnswer);
                 line("Let's try again, %s!", $playerName);
-                return;
+
+                return menu();
             }
         }
         line("Congratulations, {$playerName}!");
 
-        return;
-    } else {
-        line('Welcome to the Brain Games!');
-        $games = require_once(__DIR__ . '/menu.php');
-        $game = \cli\menu($games, $default = false, $title = 'Choose a game number');
-        if (function_exists($game)) {
-            return $game();
-        }
-        line("Wrong game number!");
+        return menu();
     }
+    menu();
+}
+
+function menu()
+{
+    line('Welcome to the Brain Games!');
+    $games = require __DIR__ . '/menu.php';
+
+    $game = cliMenu($games, $default = false, $title = 'Choose a game number');
+    if (function_exists($game)) {
+        return $game();
+    }
+    line("Wrong game number!");
 }

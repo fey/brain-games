@@ -17,7 +17,7 @@ function game()
             'description' => DESCRIPTION
         ];
     };
-    run($game);
+    run(DESCRIPTION, $game);
 }
 
 function isEven(int $number): bool

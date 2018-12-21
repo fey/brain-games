@@ -18,10 +18,9 @@ function game()
         return [
             'question' => $question,
             'answer'   => $answer,
-            'description' => DESCRIPTION
         ];
     };
-    run($game);
+    run(DESCRIPTION, $game);
 }
 
 function getGameAnswer($firstNum, $secondNum, $operand):string
