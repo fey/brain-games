@@ -32,9 +32,8 @@ function run($description = "", $game = null)
         line("Congratulations, {$playerName}!");
         return;
     } else {
-
         $game = \cli\menu($games, $default = false, $title = 'Choose a game number');
-        if(function_exists($game)) {
+        if (function_exists($game)) {
             return $game();
         }
         line("Wrong game number!");
