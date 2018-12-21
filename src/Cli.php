@@ -19,7 +19,7 @@ function run($description = null, $game = null)
             line('Question: %s', $question);
             $playerAnswer = prompt('Your answer');
 
-            if ($gameAnswer === $playerAnswer) {
+            if ($gameAnswer === $playerAnswer && $gameRound <= ROUNDS) {
                 line('Correct!');
             } else {
                 line("'%s' is wrong answer ;(. Correct answer was '%s'." . PHP_EOL, $playerAnswer, $gameAnswer);
@@ -28,20 +28,20 @@ function run($description = null, $game = null)
                 return menu();
             }
         }
-        line("Congratulations, {$playerName}!");
+
 
         return menu();
     }
 }
-
 function menu()
 {
 
-    $games = require __DIR__ . '/menu.php';
+    $games = require __DIR__ . '/Gameset.php';
 
     $game = cliMenu($games, $default = false, $title = 'Choose a game number');
     if (function_exists($game)) {
         return $game();
     }
     line("Wrong game number!");
+    return menu();
 }

@@ -25,13 +25,12 @@ function isPrime(int $number): bool
     if ($number < 2) {
         return false;
     }
-    for($delim = 2; $delim ** 2 <= $number; $delim += 1) {
+    for ($delim = 2; $delim ** 2 <= $number; $delim += 1) {
         if ($number % $delim === 0) {
             return false;
         }
     }
     return true;
-
 }
 
 function getGameAnswer(int $number): string
