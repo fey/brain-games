@@ -32,10 +32,10 @@ function menu()
 {
     $games = require __DIR__ . \DIRECTORY_SEPARATOR . 'Gameset.php';
     line('Welcome to the Brain Games!');
-    $game = cliMenu($games, $default = false, $title = 'Choose a game number');
+    $game = cliMenu($games, false, 'Choose a game number');
     if (function_exists($game)) {
         return $game();
     }
-    line("Wrong game number!");
+    line("Wrong game number!" . PHP_EOL);
     return menu();
 }
