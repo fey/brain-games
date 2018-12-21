@@ -14,9 +14,10 @@ function game()
         return [
             'question' => $question,
             'answer'   => $answer,
+            'description' => DESCRIPTION
         ];
     };
-    run(DESCRIPTION, $game);
+    run($game);
 }
 
 function isPrime(int $number): bool

@@ -24,9 +24,10 @@ function game()
         return [
             'question' => $question(),
             'answer'   => $answer,
+            'description' => DESCRIPTION
         ];
     };
-    run(DESCRIPTION, $game);
+    run($game);
 }
 
 function generateProgression($firstElement, $step, $size)
