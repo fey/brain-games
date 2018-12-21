@@ -23,7 +23,7 @@ function run($description = null, $game = null)
                 line('Correct!');
             } else {
                 line("'%s' is wrong answer ;(. Correct answer was '%s'." . PHP_EOL, $playerAnswer, $gameAnswer);
-                line("Let's try again, %s!", $playerName);
+                line("Let's try again, %s!" . PHP_EOL, $playerName);
 
                 return menu();
             }
@@ -32,7 +32,6 @@ function run($description = null, $game = null)
 
         return menu();
     }
-    menu();
 }
 
 function menu()
