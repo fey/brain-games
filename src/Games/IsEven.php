@@ -2,7 +2,7 @@
 
 namespace Games\IsEven;
 
-use function BrainGames\Cli\play;
+use function BrainGames\Cli\run;
 
 const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 
@@ -16,7 +16,7 @@ function game()
             'answer'   => $answer,
         ];
     };
-    play(DESCRIPTION, $game);
+    run(DESCRIPTION, $game);
 }
 
 function isEven(int $number): bool

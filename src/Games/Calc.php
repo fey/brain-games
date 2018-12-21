@@ -2,7 +2,7 @@
 
 namespace Games\Calc;
 
-use function BrainGames\Cli\play;
+use function BrainGames\Cli\run;
 
 const DESCRIPTION = 'What is the result of the expression?';
 const OPERANDS = ["+", "-", "*"];
@@ -20,7 +20,7 @@ function game()
             'answer'   => $answer,
         ];
     };
-    play(DESCRIPTION, $game);
+    run(DESCRIPTION, $game);
 }
 
 function getGameAnswer($firstNum, $secondNum, $operand):string

@@ -2,7 +2,7 @@
 
 namespace Games\Progression;
 
-use function BrainGames\Cli\play;
+use function BrainGames\Cli\run;
 
 const DESCRIPTION = 'What number is missing in the progression?';
 const PROGRESSION_SIZE = 10;
@@ -26,7 +26,7 @@ function game()
             'answer'   => $answer,
         ];
     };
-    play(DESCRIPTION, $game);
+    run(DESCRIPTION, $game);
 }
 
 function generateProgression($firstElement, $step, $size)
