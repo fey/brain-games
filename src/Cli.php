@@ -8,7 +8,7 @@ use function cli\menu as cliMenu;
 const ROUNDS = 3;
 function run($description = null, $game = null)
 {
-    line('Welcome to the Brain Games!');
+
     if ($game) {
         $playerName = prompt('May I have your name?');
         line(PHP_EOL . 'Hello, %s! ' . PHP_EOL, $playerName);
@@ -35,9 +35,8 @@ function run($description = null, $game = null)
 }
 function menu()
 {
-
     $games = require __DIR__ . '/Gameset.php';
-
+    line('Welcome to the Brain Games!');
     $game = cliMenu($games, $default = false, $title = 'Choose a game number');
     if (function_exists($game)) {
         return $game();
