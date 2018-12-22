@@ -12,10 +12,10 @@
     ],
     "description": "Brain Games is bundle of mini-games with command-line interface",
     "keywords": [
-        "hexlet", 
-        "brain-games", 
-        "awesome", 
-        "cli", 
+        "hexlet",
+        "brain-games",
+        "awesome",
+        "cli",
         "project"
     ],
     "autoload": {
@@ -30,7 +30,8 @@
         ]
     },
     "scripts": {
-        "phpcs": "phpcs"
+        "phpcs": "phpcs",
+        "phpcbf": "phpcbf"
     },
     "require": {
         "php" : "^7.2",
