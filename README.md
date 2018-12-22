@@ -1,5 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/26b6bc42bcb9e18e03ed/maintainability)](https://codeclimate.com/github/fey/project-lvl1-s396/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/26b6bc42bcb9e18e03ed/test_coverage)](https://codeclimate.com/github/fey/project-lvl1-s396/test_coverage)
+[![Latest Stable Version](https://poser.pugx.org/fey/brain-games/v/stable)](https://packagist.org/packages/fey/brain-games)
 [![Build Status](https://travis-ci.org/fey/project-lvl1-s396.svg?branch=master)](https://travis-ci.org/fey/project-lvl1-s396)
 
 
