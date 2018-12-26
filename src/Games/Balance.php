@@ -9,8 +9,8 @@ const DESCRIPTION = 'Balance the given number.';
 function game()
 {
     $game = function () {
-        $question;
-        $answer;
+        $question = "";
+        $answer = "";
         return [
             'question' => $question,
             'answer'   => $answer,

@@ -26,18 +26,21 @@
             "src/Games/Gcd.php",
             "src/Games/Progression.php",
             "src/Games/IsPrime.php",
-            "src/Games/TwoInPower.php"
+            "src/Games/TwoInPower.php",
+            "src/Games/Balance.php"
         ]
     },
     "scripts": {
         "phpcs": "phpcs",
-        "phpcbf": "phpcbf"
+        "phpcbf": "phpcbf",
+        "phpstan": "phpstan"
     },
     "require": {
         "php" : "^7.2",
         "wp-cli/php-cli-tools": "^0.11.10"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.3"
+        "squizlabs/php_codesniffer": "^3.3",
+        "phpstan/phpstan": "^0.10.6"
     }
 }

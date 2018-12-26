@@ -33,8 +33,8 @@ function menu()
 {
     $games = require __DIR__ . \DIRECTORY_SEPARATOR . 'Gameset.php';
     line('Welcome to the Brain Games!');
-    $game = cliMenu($games, false, 'Choose a game number');
-    if (function_exists($game)) {
+    $game = cliMenu($games, null, 'Choose a game number');
+    if (is_callable($game)) {
         return $game();
     }
     line("Wrong game number!" . PHP_EOL);

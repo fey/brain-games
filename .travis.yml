@@ -2,4 +2,4 @@ language: php
 php: 
   - '7.2'
 install: make install
-script: make lint
+script: make lint & make analyze
