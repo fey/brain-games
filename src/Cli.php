@@ -18,16 +18,17 @@ function run(string $description, $game)
         line('Question: %s', $question);
         $playerAnswer = prompt('Your answer');
 
-        if ($gameAnswer === $playerAnswer) {
-            line('Correct!');
-        } else {
+        if ($gameAnswer !== $playerAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'." . PHP_EOL, $playerAnswer, $gameAnswer);
             line("Let's try again, %s!" . PHP_EOL, $playerName);
             break;
         }
+        line('Correct!');
     }
+
     return menu();
 }
+
 function menu()
 {
     $games = require __DIR__ . \DIRECTORY_SEPARATOR . 'Gameset.php';
