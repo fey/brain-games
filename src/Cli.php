@@ -2,9 +2,9 @@
 
 namespace BrainGames\Cli;
 
-use function cli\line;
-use function cli\prompt;
-use function cli\menu as cliMenu;
+use function \cli\line;
+use function \cli\prompt;
+use function \cli\menu as cliMenu;
 
 const ROUNDS = 3;
 function run(string $description, $game)
