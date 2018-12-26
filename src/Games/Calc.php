@@ -14,7 +14,7 @@ function game()
         $secondNumber = rand(1, 50);
 
         $question = "{$firstNumber} {$operand} {$secondNumber}";
-        $answer   = getGameAnswer($firstNumber, $secondNumber, $operand);
+        $answer   = strval(getGameAnswer($firstNumber, $secondNumber, $operand));
         return [
             'question' => $question,
             'answer'   => $answer,
@@ -23,7 +23,7 @@ function game()
     run(DESCRIPTION, $game);
 }
 
-function getGameAnswer($firstNum, $secondNum, $operand):string
+function getGameAnswer(int $firstNum, int $secondNum, string $operand):int
 {
     switch ($operand) {
         case "+":
