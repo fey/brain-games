@@ -1,6 +1,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/16a1b8e72e31da6364e5/maintainability)](https://codeclimate.com/github/fey/brain-games/maintainability)
 [![Latest Stable Version](https://poser.pugx.org/fey/brain-games/v/stable)](https://packagist.org/packages/fey/brain-games)
-[![Build Status](https://travis-ci.org/fey/project-lvl1-s396.svg?branch=master)](https://travis-ci.org/fey/project-lvl1-s396)
+[![Build Status](https://travis-ci.com/fey/brain-games.svg?branch=master)](https://travis-ci.com/fey/brain-games)
 
 
 ## ASCIINEMA
