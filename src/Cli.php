@@ -8,7 +8,7 @@ use function \cli\menu as cliMenu;
 
 const ROUNDS = 3;
 
-function run(string $description, Callable $game)
+function run(string $description, callable $game)
 {
     $playerName = prompt('May I have your name?');
     line(PHP_EOL . 'Hello, %s! ' . PHP_EOL, $playerName);
