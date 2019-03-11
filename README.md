@@ -2,7 +2,7 @@
 [![Latest Stable Version](https://poser.pugx.org/fey/brain-games/v/stable)](https://packagist.org/packages/fey/brain-games)
 [![Build Status](https://travis-ci.com/fey/brain-games.svg?branch=master)](https://travis-ci.com/fey/brain-games)
 
-# Welcome to Brain Games!
+# Welcome to Brain Games
 
 ## ASCIINEMA
 

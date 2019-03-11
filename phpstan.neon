@@ -1,6 +1,0 @@
-parameters:
-	autoload_directories:
-		- ./src
-	excludes_analyse:
-	fileExtensions:
-		- php

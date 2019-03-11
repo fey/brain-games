@@ -7,7 +7,8 @@ use function \cli\prompt;
 use function \cli\menu as cliMenu;
 
 const ROUNDS = 3;
-function run(string $description, $game)
+
+function run(string $description, Callable $game)
 {
     $playerName = prompt('May I have your name?');
     line(PHP_EOL . 'Hello, %s! ' . PHP_EOL, $playerName);
@@ -28,7 +29,6 @@ function run(string $description, $game)
 
     return menu();
 }
-
 function menu()
 {
     $games = require __DIR__ . \DIRECTORY_SEPARATOR . 'Gameset.php';
