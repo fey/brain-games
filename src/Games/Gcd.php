@@ -18,7 +18,7 @@ function game()
             'answer'   => $answer,
         ];
     };
-    run(DESCRIPTION, $game);
+    return [DESCRIPTION, $game];
 }
 
 function gcd(int $num1, int $num2):int

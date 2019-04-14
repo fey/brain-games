@@ -26,7 +26,7 @@ function game()
             'answer'   => $answer,
         ];
     };
-    run(DESCRIPTION, $game);
+    return [DESCRIPTION, $game];
 }
 
 function generateProgression(int $firstElement, int $step, int $size): array

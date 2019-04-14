@@ -35,7 +35,7 @@ function menu()
     line('Welcome to the Brain Games!');
     $game = cliMenu($games, null, 'Choose a game number');
     if (is_callable($game)) {
-        return $game();
+        return run(...$game());
     }
     line("Wrong game number!" . PHP_EOL);
     return menu();

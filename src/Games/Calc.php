@@ -19,7 +19,7 @@ function game()
             'answer'   => $answer,
         ];
     };
-    run(DESCRIPTION, $game);
+    return [DESCRIPTION, $game];
 }
 
 function getGameAnswer(int $firstNum, int $secondNum, string $operand)

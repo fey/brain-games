@@ -18,5 +18,5 @@ function game()
             'answer'   => $answer,
         ];
     };
-    run(DESCRIPTION, $game);
+    return [DESCRIPTION, $game];
 }
