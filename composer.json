@@ -1,5 +1,5 @@
 {
-    "name": "fey/brain-games",
+    "name": "hexlet/code",
     "type": "project",
     "bin": [
         "bin/brain-games",
