@@ -1,0 +1,14 @@
+name: hexlet-check
+on:
+  - push
+env:
+  PROJECT_IMAGE: hexletprojects/php_l1_brain_games4_project
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Hexlet project check
+        uses: hexlet/project-action@release
+        with:
+          project_image: ${{ env.PROJECT_IMAGE }}
