@@ -1,6 +1,6 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/16a1b8e72e31da6364e5/maintainability)](https://codeclimate.com/github/fey/brain-games/maintainability)
-[![Latest Stable Version](https://poser.pugx.org/fey/brain-games/v/stable)](https://packagist.org/packages/fey/brain-games)
-[![Build Status](https://travis-ci.com/fey/brain-games.svg?branch=master)](https://travis-ci.com/fey/brain-games)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=fey_brain-games&metric=bugs)](https://sonarcloud.io/summary/new_code?id=fey_brain-games)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=fey_brain-games&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=fey_brain-games)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=fey_brain-games&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=fey_brain-games
 
 # Welcome to Brain Games
 
