@@ -2,11 +2,9 @@
 
 namespace Games\Balance;
 
-use function BrainGames\Cli\run;
-
 const DESCRIPTION = 'Balance the given number.';
 
-function game()
+function game(): array
 {
     $game = function () {
         $question = "";

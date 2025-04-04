@@ -2,11 +2,13 @@
 
 namespace Games\Calc;
 
-use function BrainGames\Cli\run;
+use Exception;
+use Throwable;
 
 const DESCRIPTION = 'What is the result of the expression?';
 const OPERANDS = ["+", "-", "*"];
-function game()
+
+function game(): array
 {
     $game = function () {
         $firstNumber  = rand(1, 50);
@@ -22,7 +24,7 @@ function game()
     return [DESCRIPTION, $game];
 }
 
-function getGameAnswer(int $firstNum, int $secondNum, string $operand)
+function getGameAnswer(int $firstNum, int $secondNum, string $operand): int
 {
     switch ($operand) {
         case "+":
@@ -32,6 +34,6 @@ function getGameAnswer(int $firstNum, int $secondNum, string $operand)
         case "-":
             return $firstNum - $secondNum;
         default:
-            return false;
+            throw new Exception("Invalid operand. '{$operand}' given");
     }
 }

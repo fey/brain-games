@@ -1,4 +1,5 @@
 <?php
+
 return [
     'Games\Calc\game'        => 'brain-calc',
     'Games\IsEven\game'      => 'brain-even',

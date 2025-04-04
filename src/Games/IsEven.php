@@ -2,11 +2,9 @@
 
 namespace Games\IsEven;
 
-use function BrainGames\Cli\run;
-
 const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 
-function game()
+function game(): array
 {
     $game = function () {
         $question = rand(1, 100);

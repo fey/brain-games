@@ -2,20 +2,23 @@
 
 namespace BrainGames\Cli;
 
-use function \cli\line;
-use function \cli\prompt;
-use function \cli\menu as cliMenu;
+use function cli\line;
+use function cli\prompt;
+use function cli\menu as cliMenu;
 
 const ROUNDS = 3;
 
-function run(string $description, callable $game)
+function run(string $description, callable $buildRound): void
 {
     $playerName = prompt('May I have your name?');
     line(PHP_EOL . 'Hello, %s! ' . PHP_EOL, $playerName);
     line($description . PHP_EOL);
 
     for ($i = 1; $i <= ROUNDS; $i += 1) {
-        ['question' => $question, 'answer'   => $gameAnswer] = $game();
+        $roundData = $buildRound();
+        $question = $roundData['question'];
+        $gameAnswer = $roundData['answer'];
+
         line('Question: %s', $question);
         $playerAnswer = prompt('Your answer');
 
@@ -27,16 +30,16 @@ function run(string $description, callable $game)
         line('Correct!');
     }
 
-    return menu();
+    menu();
 }
-function menu()
+function menu(): void
 {
     $games = require __DIR__ . \DIRECTORY_SEPARATOR . 'Gameset.php';
     line('Welcome to the Brain Games!');
-    $game = cliMenu($games, null, 'Choose a game number');
-    if (is_callable($game)) {
-        return run(...$game());
+    $getGameData = cliMenu($games, null, 'Choose a game number');
+    if (is_callable($getGameData)) {
+        run(...$getGameData());
     }
     line("Wrong game number!" . PHP_EOL);
-    return menu();
+    menu();
 }

@@ -2,11 +2,9 @@
 
 namespace Games\IsPrime;
 
-use function BrainGames\Cli\run;
-
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function game()
+function game(): array
 {
     $game = function () {
         $question = rand(1, 100);

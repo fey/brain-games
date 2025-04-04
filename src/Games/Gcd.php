@@ -2,11 +2,9 @@
 
 namespace Games\Gcd;
 
-use function BrainGames\Cli\run;
-
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
-function game()
+function game(): array
 {
     $game = function () {
         $num1 = rand(1, 100);
@@ -21,7 +19,7 @@ function game()
     return [DESCRIPTION, $game];
 }
 
-function gcd(int $num1, int $num2):int
+function gcd(int $num1, int $num2): int
 {
     $min = min([$num1, $num2]);
     $max = max([$num1, $num2]);
